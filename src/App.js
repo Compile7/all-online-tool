@@ -1,24 +1,31 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import AppBar from "./containers/AppBar"
+import SideBar from "./containers/SideBar"
+import LandinPage from './components/LandingPage';
+import {BrowserRouter as Router, Link, 
+  Routes, Route} from 'react-router-dom'
+import Routess from './Routes';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+      <AppBar />
+          <Routes >
+          <Route path='/' element={<LandinPage />}/>
+        {Routess?.map((val) => (
+          <React.Fragment>
+ <Route path={val.path} element={<val.component />} />
+          {/* <Route path={val.path} element={val.component} /> */}
+          {val?.child.map((v) => (
+            <Route path={v.path} element={<v.component />} />
+            ))}
+          </React.Fragment>
+          ))}
+          </Routes>
+      </Router>
     </div>
   );
 }
