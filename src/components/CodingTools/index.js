@@ -62,7 +62,6 @@ function CodingTools(props) {
     const location = useLocation();
     
     const component = Routes?.filter((r) => r?.path === location?.pathname)[0]
-    console.log(component);
     return (
         <ThemeProvider theme={theme}>
 

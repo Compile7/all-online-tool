@@ -47,7 +47,6 @@ function CSSMinifier(props) {
   return (
     <ThemeProvider theme={theme}>
 
-      <SideBar />
       <div className={classes.outerdiv}>
         <div className={classes.mainContentDiv}>
           <div className={classes.textfield}>

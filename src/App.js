@@ -13,6 +13,7 @@ function App() {
     <div className="App">
       <Router>
       <AppBar />
+      <SideBar/>
           <Routes >
           <Route path='/' element={<LandinPage />}/>
         {Routess?.map((val) => (

@@ -1,6 +1,7 @@
 import React from 'react';
 import CSSMinifier from './components/CSSMInifier';
 import CodingTools from './components/CodingTools';
+import CodeToImageGenerator from './components/CodeToImageGenerator';
 
 
 
@@ -10,7 +11,14 @@ const Routes = [
         sidebarName: "Coding Tools",
         path : '/coding-tools',
         component: CodingTools,
-        child :    [{
+        child :    [
+            {
+                path: '/coding-tools/code-to-image-generator',
+                sidebarName: 'Code To Image Generator',
+                component: CodeToImageGenerator,
+                description : "A CSS minifier works by analyzing the CSS file's structure and removing any unnecessary whitespace, line breaks, and comments."
+            },
+            {
                 path: '/coding-tools/css-minifier',
                 sidebarName: 'CSS-Minifier',
                 component: CSSMinifier,
